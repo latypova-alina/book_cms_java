@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    $('input#email, textarea#message').unbind().blur( function(){
+    $('input#email, input#username, textarea#message').unbind().blur( function(){
         var id = $(this).attr('id');
         var val = $(this).val();
 
@@ -24,7 +24,31 @@ $(document).ready(function(){
                         .animate({'paddingLeft':'10px'},400)
                         .animate({'paddingLeft':'5px'},400);
                 }
-                break;}
+                break;
+
+            case 'username':
+                var rv_name = /^[a-zA-Zа-яА-Я]+$/;
+
+                if(val.length > 2 && val != '' && rv_name.test(val))
+                {
+                    $(this).addClass('not_error');
+                    $(this).next('.error-box').text('Принято')
+                        .css('color','green')
+                        .animate({'paddingLeft':'10px'},400)
+                        .animate({'paddingLeft':'5px'},400);
+                }
+
+
+                else
+                {
+                    $(this).removeClass('not_error').addClass('error');
+                    $(this).next('.error-box').html('Длина имени должна составлять не менее 2 символов')
+                        .css('color','red')
+                        .animate({'paddingLeft':'10px'},400)
+                        .animate({'paddingLeft':'5px'},400);
+                }
+                break;
+        }
 
     });
 });

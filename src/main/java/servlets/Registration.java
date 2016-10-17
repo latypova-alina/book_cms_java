@@ -1,5 +1,7 @@
 package servlets;
 
+import Entities.User;
+import Services.UserService;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.Template;
 
 import javax.servlet.ServletException;
@@ -22,7 +24,15 @@ public class Registration extends HttpServlet {
         String username = req.getParameter("username");
         String email = req.getParameter("email");
         String password = req.getParameter("password");
-        System.out.println(username);
+
+
+        User user = new User(username, email, password);
+        System.out.println(user.getUsername());
+        UserService service = new UserService();
+        service.add(user);
+
+
+
 
     }
 }

@@ -22,7 +22,8 @@
                         <span class="prefix"><i class="fi-torso-female"></i></span>
                     </div>
                     <div class="small-10  columns">
-                        <input type="text" placeholder="username" name="username">
+                        <input type="text" placeholder="username" name="username" id="username">
+                        <div class="error-box"></div>
                     </div>
                 </div>
                 <div class="row collapse">
@@ -39,7 +40,7 @@
                         <span class="prefix"><i class="fi-lock"></i></span>
                     </div>
                     <div class="small-10 columns ">
-                        <input type="text" placeholder="password" name="password">
+                        <input type="password" placeholder="password" name="password">
                     </div>
                 </div>
             </form>
