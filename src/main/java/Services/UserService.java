@@ -4,6 +4,7 @@ import Entities.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import static DB.DBConnection.getDBConnection;
 
@@ -26,4 +27,28 @@ public class UserService {
 
     }
 
+    public static User searchLogin(String email) {
+        Connection connection = null;
+        try {
+            connection = getDBConnection();
+            assert connection != null;
+            PreparedStatement pstmt = connection.prepareStatement("SELECT username, email, password FROM users WHERE email = ?;");
+            pstmt.setString(1, email);
+            ResultSet set = pstmt.executeQuery();
+            if (set.next()) {
+
+                String username = set.getString(1);
+                String password = set.getString(3);
+                return new User(username, email, password);
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+
     }
+
+}
+
