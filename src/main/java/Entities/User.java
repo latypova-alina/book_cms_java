@@ -17,13 +17,11 @@ public class User {
         this.password = password;
     }
 
-    public String getUsername() {
-        return username;
-    }
+    public String getUsername() { return username; }
 
     public String getEmail() {
         return email;
     }
 
-    public String getPassword() {return password;}
+    public String getPassword() { return password; }
 }
