@@ -16,7 +16,7 @@ import java.io.IOException;
 public class Registration extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/WEB-INF/forms/registrationForm.ftl").forward(req, resp);
+        getServletContext().getRequestDispatcher("/WEB-INF/forms/registrationForm.jsp").forward(req, resp);
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -30,6 +30,8 @@ public class Registration extends HttpServlet {
         System.out.println(user.getUsername());
         UserService service = new UserService();
         service.add(user);
+        resp.sendRedirect("/mainPage");
+
 
 
 
