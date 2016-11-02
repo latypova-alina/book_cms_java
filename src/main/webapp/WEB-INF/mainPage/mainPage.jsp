@@ -32,6 +32,16 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="top-bar-left" id="somediv">
+        <ul class="film_actors">
+            <li><a href="#" id="actors" class="button success">Actors</a></li>
+            <li><a href="/showFilms" id="films">Films</a></li>
+            <li><a href="#" id="add_actor">Add Actor</a></li>
+        </ul>
+    </div>
+
+</div>
 <div class="row" id="content">
     <div class="medium-8 columns">
         <div class="blog-post">
@@ -59,8 +69,8 @@
         </div>
 
         <div class="blog-post">
-            <h3>Awesome blog post title <small>3/6/2015</small></h3>
-            <img class="thumbnail" src="http://placehold.it/850x350">
+            <h3>Post Title</h3>
+            <img class="image" id="image" src="<%=(request.getAttribute("image_path"))%>">
             <p>Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus.</p>
             <div class="callout">
                 <ul class="menu simple">
@@ -69,6 +79,17 @@
                 </ul>
             </div>
         </div>
+        <script>
+            var img = document.getElementById('image');
+            function giveFive() {
+                $.get("/showActors", function(responseText) {
+                    $("#somediv").text(responseText);
+                    var image_path = responseText;
+                    img.src = image_path;
+                });
+            }
+            document.getElementById('actors').onclick = giveFive;
+        </script>
 
         <div class="blog-post">
             <h3>Awesome blog post title <small>3/6/2015</small></h3>
