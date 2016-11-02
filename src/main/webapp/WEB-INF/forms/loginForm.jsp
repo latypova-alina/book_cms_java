@@ -36,7 +36,7 @@
                         </div>
                     </div>
                 </form>
-                <input type="submit" class="button " value="Sign Up">
+                <input type="submit" class="button " value="Sign In">
             </div>
         </div>
     </div>
