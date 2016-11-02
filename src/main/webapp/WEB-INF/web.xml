@@ -55,4 +55,22 @@
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ShowActors</servlet-name>
+        <servlet-class>servlets.ShowActors</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowActors</servlet-name>
+        <url-pattern>/showActors</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ShowFilms</servlet-name>
+        <servlet-class>servlets.ShowFilms</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowFilms</servlet-name>
+        <url-pattern>/showFilms</url-pattern>
+    </servlet-mapping>
+
 </web-app>
