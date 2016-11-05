@@ -5,8 +5,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Arrays;
 
-import static Services.FilmImageService.searchFilmImage;
+import static Services.FilmService.searchFilmImage;
 
 /**
  * Created by alina on 02.11.16.
@@ -14,20 +15,18 @@ import static Services.FilmImageService.searchFilmImage;
 public class ShowFilms extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        int film_id = 1;
+        String[] image_path = new String[3];
 
-        if (searchFilmImage(film_id) != null) {
-
-            String image_path = searchFilmImage(film_id);
-
-
-
-            resp.setContentType("text/plain");  // Set content type of the response so that jQuery knows what it can expect.
-            resp.setCharacterEncoding("UTF-8"); // You want world domination, huh?
-            resp.getWriter().write(image_path);
-
-
+        for (int i = 0; i < 2; i++) {
+            if (searchFilmImage(i + 1) != null) {
+                image_path[i] = searchFilmImage(i + 1);
+            }
         }
+
+
+        resp.setContentType("text/plain");  // Set content type of the response so that jQuery knows what it can expect.
+        resp.setCharacterEncoding("UTF-8"); // You want world domination, huh?
+        resp.getWriter().write(Arrays.toString(image_path));
 
 
 
