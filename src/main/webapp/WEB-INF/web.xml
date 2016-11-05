@@ -73,4 +73,31 @@
         <url-pattern>/showFilms</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ShowActorsNames</servlet-name>
+        <servlet-class>servlets.ShowActorsNames</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowActorsNames</servlet-name>
+        <url-pattern>/showActorsNames</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ShowFilmsNames</servlet-name>
+        <servlet-class>servlets.ShowFilmsNames</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowFilmsNames</servlet-name>
+        <url-pattern>/showFilmsNames</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ShowFilmsDescriprion</servlet-name>
+        <servlet-class>servlets.ShowFilmsDescription</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowFilmsDescriprion</servlet-name>
+        <url-pattern>/showFilmsDescription</url-pattern>
+    </servlet-mapping>
+
 </web-app>
