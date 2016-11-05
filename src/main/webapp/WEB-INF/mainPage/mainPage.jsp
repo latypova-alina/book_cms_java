@@ -61,9 +61,9 @@
         </div>
 
         <div class="blog-post">
-            <h3>Post Title</h3>
+            <h3 id = 'name_1'>Post Title</h3>
             <img class="image" id="image_1" src="">
-            <p>Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus.</p>
+            <p id="description_1"></p>
             <div class="callout">
                 <ul class="menu simple">
                     <li><a href="#">Author: Mike Mikers</a></li>
@@ -73,9 +73,9 @@
         </div>
 
         <div class="blog-post">
-            <h3>Post Title</h3>
+            <h3 id="name_2">Post Title</h3>
             <img class="image" id="image_2" src="">
-            <p>Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus.</p>
+            <p id="description_2"></p>
             <div class="callout">
                 <ul class="menu simple">
                     <li><a href="#">Author: Mike Mikers</a></li>
