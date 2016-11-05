@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Arrays;
 
 import static Services.ActorImageService.searchActorImage;
 
@@ -14,22 +15,29 @@ import static Services.ActorImageService.searchActorImage;
 public class ShowActors extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+
         int actor_id = 1;
+        String[] image_path = new String[3];
 
-        if (searchActorImage(actor_id) != null) {
+        for (int i = 0; i < 2; i++) {
+            if (searchActorImage(i + 1) != null) {
+                image_path[i] = searchActorImage(i + 1);
+            }
+        }
 
-            String image_path = searchActorImage(actor_id);
+        System.out.println(actor_id);
 
-            resp.setContentType("text/plain");  // Set content type of the response so that jQuery knows what it can expect.
-            resp.setCharacterEncoding("UTF-8"); // You want world domination, huh?
-            resp.getWriter().write(image_path);
+        resp.setContentType("text/plain");  // Set content type of the response so that jQuery knows what it can expect.
+        resp.setCharacterEncoding("UTF-8"); // You want world domination, huh?
+        resp.getWriter().write(Arrays.toString(image_path));
+
             //req.setAttribute("image_path", image_path);
 
             //getServletContext().getRequestDispatcher("/WEB-INF/mainPage/mainPage.jsp").forward(req, resp);
 
 
 
-        }
+
 
 
 
