@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="en">
+<%@ page contentType="text/html;charset=UTF-8" %>
 <head>
     <script type="text/javascript" src="lib/jquery/jquery.js"></script>
     <script type="text/javascript" src="lib/jquery/jquery.form.js"></script>
@@ -40,28 +41,15 @@
     <div class="top-bar-left">
             <a href="#" id="actors" class="button success">Actors</a>
             <a href="#" id="films" class="button success">Films</a>
-            <a href="#" id="news">News</a>
+            <a href="#" id="news" class="button success">News</a>
     </div>
 
 </div>
 <div class="row" id="content">
     <div class="medium-8 columns">
 
-
         <div class="blog-post">
-            <h3>Awesome blog post title <small>3/6/2015</small></h3>
-            <img class="thumbnail" src="http://placehold.it/850x350">
-            <p>Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus.</p>
-            <div class="callout">
-                <ul class="menu simple">
-                    <li><a href="#">Author: Mike Mikers</a></li>
-                    <li><a href="#">Comments: 3</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="blog-post">
-            <h3 id = 'name_1'>Post Title</h3>
+            <h3 id = 'name_1'></h3>
             <img class="image" id="image_1" src="">
             <p id="description_1"></p>
             <div class="callout">
@@ -73,7 +61,7 @@
         </div>
 
         <div class="blog-post">
-            <h3 id="name_2">Post Title</h3>
+            <h3 id="name_2"></h3>
             <img class="image" id="image_2" src="">
             <p id="description_2"></p>
             <div class="callout">
@@ -84,9 +72,21 @@
             </div>
         </div>
         <div class="blog-post">
-            <h3>Awesome blog post title<small>3/6/2015</small></h3>
-            <img class="image" id="image_<%=request.getAttribute("image_id")%>" src="">
-            <p>Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus.</p>
+            <h3 id="name_3"></h3>
+            <img class="image" id="image_3" src="">
+            <p id="description_3"></p>
+            <div class="callout">
+                <ul class="menu simple">
+                    <li><a href="#">Author: Mike Mikers</a></li>
+                    <li><a href="#">Comments: 3</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="blog-post">
+            <h3 id="name_4"></h3>
+            <img class="image" src="">
+            <p id="description_4"></p>
             <div class="callout">
                 <ul class="menu simple">
                     <li><a href="#">Author: Mike Mikers</a></li>
@@ -99,8 +99,8 @@
         <div class="sticky" data-sticky data-anchor="content">
             <h4>Categories</h4>
             <ul>
-                <li><a href="#">Skyler</a></li>
-                <li><a href="#">Jesse</a></li>
+                <li><a id="drama" href="#">Драма</a></li>
+                <li><a href="#">Комедия</a></li>
                 <li><a href="#">Mike</a></li>
                 <li><a href="#">Holly</a></li>
             </ul>
