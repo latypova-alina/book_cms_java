@@ -9,6 +9,7 @@ import java.util.Arrays;
 
 import static Services.FilmService.searchFilmImage;
 
+
 /**
  * Created by alina on 02.11.16.
  */
@@ -23,12 +24,9 @@ public class ShowFilms extends HttpServlet{
             }
         }
 
-
-        resp.setContentType("text/plain");  // Set content type of the response so that jQuery knows what it can expect.
-        resp.setCharacterEncoding("UTF-8"); // You want world domination, huh?
+        resp.setContentType("text/plain");
+        resp.setCharacterEncoding("UTF-8"); 
         resp.getWriter().write(Arrays.toString(image_path));
-
-
 
     }
 }
