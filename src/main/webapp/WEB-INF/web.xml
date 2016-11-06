@@ -100,4 +100,31 @@
         <url-pattern>/showFilmsDescription</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ShowFilmsByCategories</servlet-name>
+        <servlet-class>servlets.ShowFilmsByCategories</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowFilmsByCategories</servlet-name>
+        <url-pattern>/showFilmsByCategories</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ShowNews</servlet-name>
+        <servlet-class>servlets.ShowNews</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowNews</servlet-name>
+        <url-pattern>/showNews</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ShowNewsTitle</servlet-name>
+        <servlet-class>servlets.ShowNewsTitle</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowNewsTitle</servlet-name>
+        <url-pattern>/showNewsTitle</url-pattern>
+    </servlet-mapping>
+
 </web-app>
