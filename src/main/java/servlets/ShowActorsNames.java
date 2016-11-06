@@ -23,8 +23,6 @@ public class ShowActorsNames extends HttpServlet {
                 names[i] = searchActorName(i + 1);
             }
         }
-        System.out.println(Arrays.toString(names));
-
 
         resp.setContentType("text/plain");  // Set content type of the response so that jQuery knows what it can expect.
         resp.setCharacterEncoding("UTF-8"); // You want world domination, huh?
