@@ -1,8 +1,10 @@
 package Services;
 
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Arrays;
 
 import static DB.DBConnection.getDBConnection;
 
@@ -80,6 +82,31 @@ public class FilmService {
                 return description;
 
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public static int[] sortByCategory(String category) {
+        try {
+            Connection connection = (Connection) getDBConnection();
+            PreparedStatement ps = connection.prepareStatement("Select film_id from categories where category = ?");
+            ps.setString(1, category);
+            ResultSet set = ps.executeQuery();
+            //ps.setBinaryStream(2, fis, file.length());
+            //ps.executeUpdate();
+            //ps.close();
+            //fis.close();
+            int i=0;
+            int n = 2;
+            int[] films = new int[n];
+
+            while(set.next()) {
+                films[i] = set.getInt("film_id");
+                i++;
+            }
+            return films;
+
         } catch (Exception e) {
             e.printStackTrace();
         }
